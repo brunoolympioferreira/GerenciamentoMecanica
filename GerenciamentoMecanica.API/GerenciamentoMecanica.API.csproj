@@ -8,4 +8,14 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciamentoMecanica.Application\GerenciamentoMecanica.Application.csproj" />
+    <ProjectReference Include="..\GerenciamentoMecanica.Core\GerenciamentoMecanica.Core.csproj" />
+    <ProjectReference Include="..\GerenciamentoMecanica.Infra\GerenciamentoMecanica.Infra.csproj" />
+  </ItemGroup>
+
 </Project>

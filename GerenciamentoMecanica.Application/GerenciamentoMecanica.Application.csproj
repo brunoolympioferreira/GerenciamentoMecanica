@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciamentoMecanica.Core\GerenciamentoMecanica.Core.csproj" />
+    <ProjectReference Include="..\GerenciamentoMecanica.Infra\GerenciamentoMecanica.Infra.csproj" />
+  </ItemGroup>
+
 </Project>
