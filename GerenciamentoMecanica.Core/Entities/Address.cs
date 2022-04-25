@@ -22,5 +22,16 @@ namespace GerenciamentoMecanica.Core.Entities
         public string District { get; private set; }
         public string City { get; private set; }
         public StatesEnum State { get; private set; }
+
+        public void UpdateVehicle(string street, string number, string complement, string zipCode, string district, string city, StatesEnum state)
+        {
+            Street = street;
+            Number= number;
+            Complement = complement;
+            ZipCode = zipCode;
+            District = district;
+            City = city;
+            State = state;
+        }
     }
 }

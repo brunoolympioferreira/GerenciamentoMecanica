@@ -20,6 +20,7 @@ namespace GerenciamentoMecanica.Core.Entities
 
         public string ServiceDescription { get; private set; }
         public DateTime InputData { get; private set; }
+        public DateTime? UpdatedData { get;private set; }
         public DateTime? OutputData { get; private set; }
         public decimal? TotalCost { get; private set; }
         public ServiceStatusEnum ServiceStatus { get; private set; }
@@ -28,7 +29,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public Client Client { get; set; }
         public Vehicle Vehicle { get; set; }
 
-        public void Cancel()
+        public void CancelService()
         {
             if (ServiceStatus == ServiceStatusEnum.InProgress)
             {
@@ -36,7 +37,7 @@ namespace GerenciamentoMecanica.Core.Entities
             }
         }
 
-        public void Finish()
+        public void FinishService()
         {
             if (ServiceStatus == ServiceStatusEnum.InProgress)
             {
@@ -45,10 +46,11 @@ namespace GerenciamentoMecanica.Core.Entities
             }
         }
 
-        //public void Update(string serviceDescription, decimal totalCost)
-        //{
-        //    ServiceDescription = serviceDescription;
-        //    TotalCost = totalCost;
-        //}
+        public void UpdateService(string serviceDescription, decimal totalCost)
+        {
+            ServiceDescription = serviceDescription;
+            TotalCost = totalCost;
+            UpdatedData = DateTime.Now;
+        }
     }
 }

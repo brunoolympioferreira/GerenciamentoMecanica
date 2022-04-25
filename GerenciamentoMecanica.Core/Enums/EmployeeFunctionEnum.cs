@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.Core.Enums
 {
-    public enum EmployeeFuncionEnum
+    public enum EmployeeFunctionEnum
     {
         Default,
         AjudanteGeral,

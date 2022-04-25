@@ -5,25 +5,27 @@ namespace GerenciamentoMecanica.Core.Entities
 {
     public class Employee : BaseEntity
     {
-        public Employee(string fullName, int age,int idAdress, string cPF, string rG, string carteiraTrabalho, string pIS, string reservista, EmployeeFuncionEnum funcionEnum, decimal salary, DateTime admissionDate, DateTime? resignationDate)
+        public Employee(string fullName, DateTime birthdayDate,int idAdress, string cPF, string rG, string carteiraTrabalho, string pIS, string reservista, EmployeeFunctionEnum functionEnum, decimal salary, DateTime admissionDate, DateTime? resignationDate)
         {
             FullName = fullName;
-            Age = age;
+            BirthdayDate = birthdayDate;
             IdAddress = idAdress;
             CPF = cPF;
             RG = rG;
             CarteiraTrabalho = carteiraTrabalho;
             PIS = pIS;
             Reservista = reservista;
-            FuncionEnum = funcionEnum;
+            FunctionEnum = functionEnum;
             Salary = salary;
             AdmissionDate = admissionDate;
             ResignationDate = resignationDate;
 
             EmployeeStatus = EmployeeStatusEnum.Ativo;
+            Age = DateTime.Now.Year - birthdayDate.Year;
         }
 
         public string FullName { get; private set; }
+        public DateTime BirthdayDate { get; private set; }
         public int Age { get; private set; }
         public int IdAddress { get; private set; }
         public Address Address { get; set; }
@@ -32,9 +34,9 @@ namespace GerenciamentoMecanica.Core.Entities
         public string CarteiraTrabalho { get; private set; }
         public string PIS { get; private set; }
         public string Reservista { get; private set; }
-        public EmployeeFuncionEnum FuncionEnum { get; }
+        public EmployeeFunctionEnum FunctionEnum { get; private set; }
         public decimal Salary { get; private set; }
-        public EmployeeFuncionEnum Function { get; private set; }
+        public EmployeeFunctionEnum Function { get; private set; }
         public DateTime AdmissionDate { get; private set; }
         public DateTime? ResignationDate { get; private set; }
         public DateTime? FinishVacation { get; private set; }
@@ -82,6 +84,13 @@ namespace GerenciamentoMecanica.Core.Entities
                     EmployeeStatus = EmployeeStatusEnum.Ativo;
                 }
             }
+        }
+
+        public void UpdateEmployee(string fullName, EmployeeFunctionEnum function, decimal salary)
+        {
+            FullName = fullName;
+            Function = function;
+            Salary = salary;
         }
     }
 }
