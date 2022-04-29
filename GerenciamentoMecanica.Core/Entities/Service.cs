@@ -26,8 +26,9 @@ namespace GerenciamentoMecanica.Core.Entities
         public ServiceStatusEnum ServiceStatus { get; private set; }
         public int IdClient { get; private set; }
         public int IdVehicle { get; private set; }
-        public Client Client { get; set; }
-        public Vehicle Vehicle { get; set; }
+
+        public virtual Client Client { get; set; }
+        public virtual Vehicle Vehicle { get; set; }
 
         public void CancelService()
         {
