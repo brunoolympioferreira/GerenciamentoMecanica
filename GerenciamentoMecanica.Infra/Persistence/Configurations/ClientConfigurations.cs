@@ -25,7 +25,7 @@ namespace GerenciamentoMecanica.Infra.Persistence.Configurations
                 .HasMaxLength(50);
 
             builder
-                .Property(c => c.CPF)
+                .Property(c => c.Cpf)
                 .IsRequired()
                 .HasMaxLength(11);
         }

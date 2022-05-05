@@ -39,6 +39,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public DateTime? EmployeeLeave { get; private set; }
         public EmployeeStatusEnum EmployeeStatus { get; private set; }
 
+        public int AddressId { get; set; }
         public virtual Address Address { get; set; }
 
         public void Admission()

@@ -10,7 +10,7 @@ namespace GerenciamentoMecanica.Core.Entities
         {
             FullName = fullName;
             Email = email;
-            CPF = cpf;
+            Cpf = cpf;
 
             CreatedAt = DateTime.Now;
             Services = new List<Service>();
@@ -19,10 +19,11 @@ namespace GerenciamentoMecanica.Core.Entities
 
         public string FullName { get; private set; }
         public string Email { get; private set; }
-        public string CPF { get; private set; }
+        public string Cpf { get; private set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime? UpdatedAt {get;private set;}
 
+        public int AddressId { get; set; }
         public virtual Address Address { get; set; }
         public virtual List<Service> Services { get; private set; }
         public virtual List<Vehicle> Vehicles { get; private set; }

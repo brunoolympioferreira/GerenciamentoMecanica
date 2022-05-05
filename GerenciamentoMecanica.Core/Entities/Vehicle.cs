@@ -15,7 +15,7 @@ namespace GerenciamentoMecanica.Core.Entities
             Brand = brand;
             YearOfManufacture = yearOfManufacture;
             LicensePlate = licensePlate;
-            IdClient = clientId;
+            ClientId = clientId;
 
             Services = new List<Service>();
         }
@@ -25,7 +25,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public DateTime YearOfManufacture { get; private set; }
         public string LicensePlate { get; private set; }
 
-        public int IdClient { get; private set; }
+        public int ClientId { get; private set; }
         public virtual Client Client { get; set; }
         public virtual List<Service> Services { get; set; }
     }

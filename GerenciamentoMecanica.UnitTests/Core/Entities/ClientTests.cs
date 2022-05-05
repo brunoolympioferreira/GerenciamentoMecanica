@@ -16,7 +16,6 @@ namespace GerenciamentoMecanica.UnitTests.Core.Entities
             var client = new Client(
                 "Bruno Ferreira",
                 "bruno@email.com",
-                1,
                 "33256985231"
                 );
 

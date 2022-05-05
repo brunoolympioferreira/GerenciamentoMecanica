@@ -33,7 +33,7 @@ namespace GerenciamentoMecanica.Infra.Persistence.Configurations
             builder
                 .HasOne(c => c.Client)
                 .WithMany(v => v.Vehicles)
-                .HasForeignKey(v => v.IdClient)
+                .HasForeignKey(v => v.ClientId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
