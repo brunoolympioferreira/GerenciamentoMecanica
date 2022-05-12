@@ -1,3 +1,4 @@
+using GerenciamentoMecanica.API.Extensions;
 using GerenciamentoMecanica.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,8 @@ namespace GerenciamentoMecanica.API
 
             services.AddDbContext<GerenciamentoMecanicaDbContext>(
                 options => options.UseSqlServer(connectionString));
+
+            services.AddInfra();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

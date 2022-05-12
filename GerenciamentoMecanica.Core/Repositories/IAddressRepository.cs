@@ -11,14 +11,13 @@ namespace GerenciamentoMecanica.Core.Repositories
     {
         #region Queries
         Task<List<Address>> GetAllAddressAsync();
-        Task<Address> GetAddressByIdAsync(int id);
+        Task<Address> GetAddressByIdEmployeeAsync(int employeeId);
         Task<Address> GetAddressByClientAsync(int clientId);
         Task<Address> GetByIdAsync(int id);
         #endregion
 
         #region Commands
         Task AddAddressAsync(Address address);
-        Task DeleteAddressAsync(int id);
         Task SaveChangesAsync();
         #endregion
     }

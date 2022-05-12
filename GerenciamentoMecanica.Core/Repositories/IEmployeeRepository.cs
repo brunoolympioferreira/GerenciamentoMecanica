@@ -13,12 +13,7 @@ namespace GerenciamentoMecanica.Core.Repositories
         #endregion
 
         #region Commands
-        Task<Employee> AddEmployee(Employee employee);
-        Task<Employee> AdmissionAsync(Employee employee);
-        Task<Employee> ResignationAsync(Employee employee);
-        Task<Employee> VacationAsync(Employee employee);
-        Task<Employee> EmployeeAfastamentAsync(Employee employee);
-        Task<Employee> UpdateEmployeeAsync(Employee employee);
+        Task AddEmployee(Employee employee);
         Task SaveChangesAsync();
         #endregion
     }

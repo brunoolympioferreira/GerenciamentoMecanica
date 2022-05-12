@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="AuthServices\" />
-    <Folder Include="Persistence\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
