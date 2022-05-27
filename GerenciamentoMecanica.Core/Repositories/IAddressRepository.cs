@@ -18,6 +18,7 @@ namespace GerenciamentoMecanica.Core.Repositories
 
         #region Commands
         Task AddAddressAsync(Address address);
+        Task DeleteAddressAsync(int id);
         Task SaveChangesAsync();
         #endregion
     }

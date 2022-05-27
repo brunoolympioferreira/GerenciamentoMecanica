@@ -5,11 +5,9 @@ namespace GerenciamentoMecanica.Core.Entities
 {
     public class Service : BaseEntity
     {
-        public Service(string serviceDescription, DateTime? outputData, decimal? totalCost, int idClient, int idVehicle)
+        public Service(string serviceDescription,int idClient, int idVehicle)
         {
             ServiceDescription = serviceDescription;
-            OutputData = outputData;
-            TotalCost = totalCost;
             IdClient = idClient;
             IdVehicle = idVehicle;
 
@@ -38,14 +36,18 @@ namespace GerenciamentoMecanica.Core.Entities
             }
         }
 
-        public void FinishService()
+
+        public void FinishService(decimal totalCost)
         {
             if (ServiceStatus == ServiceStatusEnum.InProgress)
             {
                 ServiceStatus = ServiceStatusEnum.Finished;
                 OutputData = DateTime.Now;
+                TotalCost = totalCost;
             }
         }
+
+        // Criar funcao para orçamento
 
         public void UpdateService(string serviceDescription, decimal totalCost)
         {

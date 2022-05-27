@@ -25,7 +25,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public virtual Client Client { get; set; }
         public virtual Employee Employee { get; set; }
 
-        public void UpdateVehicle(string street, string number, string complement, string zipCode, string district, string city, StatesEnum state)
+        public void UpdateAddress(string street, string number, string complement, string zipCode, string district, string city, StatesEnum state)
         {
             Street = street;
             Number= number;

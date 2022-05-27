@@ -2,6 +2,7 @@
 using GerenciamentoMecanica.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.Infra.Persistence.Repositories
@@ -45,9 +46,17 @@ namespace GerenciamentoMecanica.Infra.Persistence.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task DeleteAddressAsync(int id)
+        {
+            var entity = await GetByIdAsync(id);
+            _dbContext.Set<Address>().Remove(entity);
+            await _dbContext.SaveChangesAsync();
+        }
+
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
         }
+
     }
 }

@@ -9,4 +9,27 @@
     <ProjectReference Include="..\GerenciamentoMecanica.Infra\GerenciamentoMecanica.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Commands\ServiceCommands\CancelService\" />
+    <Folder Include="Commands\ServiceCommands\FinishService\" />
+    <Folder Include="Commands\ServiceCommands\UpdateService\" />
+    <Folder Include="Commands\VehicleCommands\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Queries\AddressQueries\" />
+    <Folder Include="Queries\ClientQueries\" />
+    <Folder Include="Queries\EmployeeQueries\" />
+    <Folder Include="Queries\VehicleQueries\" />
+    <Folder Include="Queries\ServiceQueries\" />
+    <Folder Include="Validators\AddressValidators\" />
+    <Folder Include="Validators\ClientValidators\" />
+    <Folder Include="Validators\EmployeeValidators\" />
+    <Folder Include="Validators\VehicleValidators\" />
+    <Folder Include="Validators\ServiceValidators\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="11.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
 </Project>
