@@ -14,6 +14,7 @@ namespace GerenciamentoMecanica.Core.Repositories
 
         #region Commands
         Task AddVehicleAsync(Vehicle vehicle);
+        Task DeleteVehicleAsync(int id);
         Task SaveChangesAsync();
         #endregion
     }

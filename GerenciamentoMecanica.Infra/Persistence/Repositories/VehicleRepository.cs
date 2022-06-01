@@ -37,10 +37,17 @@ namespace GerenciamentoMecanica.Infra.Persistence.Repositories
             await _dbContext.Vehicles.AddAsync(vehicle);
             await _dbContext.SaveChangesAsync();
         }
+        public async Task DeleteVehicleAsync(int id)
+        {
+            var entity = await GetByIdAsync(id);
+            _dbContext.Set<Vehicle>().Remove(entity);
+            await _dbContext.SaveChangesAsync();
+        }
 
         public async Task SaveChangesAsync()
         {
             await _dbContext.SaveChangesAsync();
         }
+
     }
 }

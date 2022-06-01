@@ -10,10 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\ServiceCommands\CancelService\" />
-    <Folder Include="Commands\ServiceCommands\FinishService\" />
-    <Folder Include="Commands\ServiceCommands\UpdateService\" />
-    <Folder Include="Commands\VehicleCommands\" />
+    <Folder Include="Commands\VehicleCommands\DeleteVehicle\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Queries\AddressQueries\" />
     <Folder Include="Queries\ClientQueries\" />
