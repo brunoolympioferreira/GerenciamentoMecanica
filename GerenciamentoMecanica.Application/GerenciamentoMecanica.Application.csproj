@@ -10,9 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Commands\VehicleCommands\DeleteVehicle\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Queries\AddressQueries\" />
+    <Folder Include="Queries\AddressQueries\GetAddressByClient\" />
+    <Folder Include="Queries\AddressQueries\GetAddressByEmployee\" />
     <Folder Include="Queries\ClientQueries\" />
     <Folder Include="Queries\EmployeeQueries\" />
     <Folder Include="Queries\VehicleQueries\" />
