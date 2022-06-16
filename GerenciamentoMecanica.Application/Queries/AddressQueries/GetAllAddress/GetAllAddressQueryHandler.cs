@@ -25,8 +25,8 @@ namespace GerenciamentoMecanica.Application.Queries.AddressQueries.GetAllAddress
             var address = await _addressRepository.GetAllAddressAsync();
 
             var adddressViewModel = address
-                .Select(p => new AddressViewModel(
-                    p.Id,p.Street,p.Number,p.Complement,p.ZipCode,p.District,p.City,p.State))
+                .Select(a => new AddressViewModel(
+                    a.Id,a.Street,a.Number,a.Complement,a.ZipCode,a.District,a.City,a.State))
                 .ToList();
 
             return adddressViewModel;

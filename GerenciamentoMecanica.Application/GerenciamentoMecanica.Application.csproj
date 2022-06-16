@@ -10,12 +10,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Queries\AddressQueries\GetAddressByClient\" />
-    <Folder Include="Queries\AddressQueries\GetAddressByEmployee\" />
-    <Folder Include="Queries\ClientQueries\" />
-    <Folder Include="Queries\EmployeeQueries\" />
-    <Folder Include="Queries\VehicleQueries\" />
-    <Folder Include="Queries\ServiceQueries\" />
     <Folder Include="Validators\AddressValidators\" />
     <Folder Include="Validators\ClientValidators\" />
     <Folder Include="Validators\EmployeeValidators\" />
