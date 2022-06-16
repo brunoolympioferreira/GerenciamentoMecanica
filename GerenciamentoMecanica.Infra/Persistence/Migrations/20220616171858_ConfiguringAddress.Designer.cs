@@ -4,14 +4,16 @@ using GerenciamentoMecanica.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GerenciamentoMecanica.Infra.Persistence.Migrations
 {
     [DbContext(typeof(GerenciamentoMecanicaDbContext))]
-    partial class GerenciamentoMecanicaDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220616171858_ConfiguringAddress")]
+    partial class ConfiguringAddress
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

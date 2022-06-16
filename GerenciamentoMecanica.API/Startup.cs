@@ -1,5 +1,7 @@
 using GerenciamentoMecanica.API.Extensions;
+using GerenciamentoMecanica.Application.Commands.ClientCommands.CreateClient;
 using GerenciamentoMecanica.Infra;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -14,6 +16,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.API
@@ -32,10 +35,16 @@ namespace GerenciamentoMecanica.API
         {
             var connectionString = Configuration.GetConnectionString("GerenciamentoMecanicaCs");
 
+            //DB In Memory
+            //services.AddDbContext<GerenciamentoMecanicaDbContext>(options => options.UseInMemoryDatabase("GerenciamentoMecanicaCs"));
+
+            // Db in SQL Server
             services.AddDbContext<GerenciamentoMecanicaDbContext>(
                 options => options.UseSqlServer(connectionString));
 
             services.AddInfra();
+
+            services.AddMediatR(typeof(CreateClientCommandHandler));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

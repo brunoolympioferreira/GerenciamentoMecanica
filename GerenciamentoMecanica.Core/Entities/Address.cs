@@ -4,8 +4,9 @@ namespace GerenciamentoMecanica.Core.Entities
 {
     public class Address : BaseEntity
     {
-        public Address(string street, string number, string complement, string zipCode, string district, string city, StatesEnum state)
+        public Address(int clientId,string street, string number, string complement, string zipCode, string district, string city, StatesEnum state)
         {
+            ClientId = clientId;
             Street = street;
             Number = number;
             Complement = complement;
@@ -21,7 +22,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public string District { get; private set; }
         public string City { get; private set; }
         public StatesEnum State { get; private set; }
-
+        public int ClientId { get; private set; }
         public virtual Client Client { get; set; }
         public virtual Employee Employee { get; set; }
 

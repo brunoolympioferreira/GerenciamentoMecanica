@@ -23,7 +23,7 @@ namespace GerenciamentoMecanica.Core.Entities
         public DateTime CreatedAt { get; private set; }
         public DateTime? UpdatedAt {get;private set;}
 
-        public int AddressId { get; set; }
+        //public int AddressId { get; set; }
         public virtual Address Address { get; set; }
         public virtual List<Service> Services { get; private set; }
         public virtual List<Vehicle> Vehicles { get; private set; }

@@ -17,6 +17,7 @@ namespace GerenciamentoMecanica.Application.Commands.AddressCommands.CreateAddre
         public async Task<int> Handle(CreateAddressCommand request, CancellationToken cancellationToken)
         {
             var address = new Address(
+                request.ClientId,
                 request.Street,
                 request.Number,
                 request.Complement,

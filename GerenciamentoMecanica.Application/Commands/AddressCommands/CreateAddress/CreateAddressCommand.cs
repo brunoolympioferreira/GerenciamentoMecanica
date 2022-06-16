@@ -1,4 +1,5 @@
-﻿using GerenciamentoMecanica.Core.Enums;
+﻿using GerenciamentoMecanica.Core.Entities;
+using GerenciamentoMecanica.Core.Enums;
 using MediatR;
 
 namespace GerenciamentoMecanica.Application.Commands.AddressCommands.CreateAddress
@@ -12,5 +13,6 @@ namespace GerenciamentoMecanica.Application.Commands.AddressCommands.CreateAddre
         public string District { get; set; }
         public string City { get; set; }
         public StatesEnum State { get; set; }
+        public int ClientId { get; set; }
     }
 }
