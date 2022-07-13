@@ -25,8 +25,5 @@ namespace GerenciamentoMecanica.Application.ViewModels
         public string District { get; private set; }
         public string City { get; private set; }
         public StatesEnum State { get; private set; }
-
-        public virtual Client Client { get; set; }
-        public virtual Employee Employee { get; set; }
     }
 }

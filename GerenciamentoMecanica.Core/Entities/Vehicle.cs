@@ -9,7 +9,15 @@ namespace GerenciamentoMecanica.Core.Entities
 {
     public class Vehicle : BaseEntity
     {
-        public Vehicle(ManufacturerEnum manufacturer, string brand, DateTime yearOfManufacture, string licensePlate, int clientId)
+        public Vehicle(ManufacturerEnum manufacturer, string brand, string yearOfManufacture, string licensePlate)
+        {
+            Manufacturer = manufacturer;
+            Brand = brand;
+            YearOfManufacture = yearOfManufacture;
+            LicensePlate = licensePlate;
+        }
+
+        public Vehicle(ManufacturerEnum manufacturer, string brand, string yearOfManufacture, string licensePlate, int clientId)
         {
             Manufacturer = manufacturer;
             Brand = brand;
@@ -22,7 +30,7 @@ namespace GerenciamentoMecanica.Core.Entities
 
         public ManufacturerEnum Manufacturer { get; private set; }
         public string Brand { get; private set; }
-        public DateTime YearOfManufacture { get; private set; }
+        public string YearOfManufacture { get; private set; }
         public string LicensePlate { get; private set; }
 
         public int ClientId { get; private set; }

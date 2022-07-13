@@ -1,10 +1,6 @@
 ﻿using GerenciamentoMecanica.Application.ViewModels;
 using GerenciamentoMecanica.Core.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,8 +21,8 @@ namespace GerenciamentoMecanica.Application.Queries.VehicleQueries.GetVehicleByI
             if (vehicle == null) return null;
 
             var vehicleDetailsViewModel = new VehicleDetailsViewModel(
-                vehicle.Id,vehicle.Manufacturer,vehicle.Brand,
-                vehicle.YearOfManufacture,vehicle.LicensePlate,vehicle.ClientId
+                vehicle.Id, vehicle.Manufacturer, vehicle.Brand,
+                vehicle.YearOfManufacture, vehicle.LicensePlate, vehicle.ClientId, vehicle.Client.FullName
                 );
 
             return vehicleDetailsViewModel;

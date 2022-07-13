@@ -10,10 +10,10 @@ namespace GerenciamentoMecanica.Application.Commands.VehicleCommands.CreateVehic
 {
     public class CreateVehicleCommand : IRequest<int>
     {
-        public ManufacturerEnum Manufacturer { get; private set; }
-        public string Brand { get; private set; }
-        public DateTime YearOfManufacture { get; private set; }
-        public string LicensePlate { get; private set; }
+        public ManufacturerEnum Manufacturer { get; set; }
+        public string Brand { get; set; }
+        public string YearOfManufacture { get; set; }
+        public string LicensePlate { get; set; }
         public int CliendId { get; set; }
 
 

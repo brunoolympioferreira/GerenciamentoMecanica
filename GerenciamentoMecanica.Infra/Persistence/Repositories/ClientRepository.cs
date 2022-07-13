@@ -28,6 +28,7 @@ namespace GerenciamentoMecanica.Infra.Persistence.Repositories
         {
             return await _dbContext.Clients
                 .Include(c => c.Address)
+                .Include(v => v.Vehicles)
                 .SingleOrDefaultAsync(c => c.Id == id);
         }
 

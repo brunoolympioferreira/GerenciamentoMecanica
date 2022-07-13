@@ -4,6 +4,11 @@ namespace GerenciamentoMecanica.Application.Commands.VehicleCommands.DeleteVehic
 {
     public class DeleteVehicleCommand : IRequest<Unit>
     {
+        public DeleteVehicleCommand(int id)
+        {
+            Id = id;
+        }
+
         public int Id { get; set; }
     }
 }

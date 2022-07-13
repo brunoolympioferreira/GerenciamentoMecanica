@@ -1,14 +1,14 @@
 ﻿using GerenciamentoMecanica.Application.Commands.AddressCommands.CreateAddress;
+using GerenciamentoMecanica.Application.Commands.AddressCommands.UpdateAddress;
 using GerenciamentoMecanica.Application.Queries.AddressQueries.GetAddressById;
 using GerenciamentoMecanica.Application.Queries.AddressQueries.GetAllAddress;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/address")]
     //[ApiController]
     public class AddressController : ControllerBase
     {
@@ -49,7 +49,15 @@ namespace GerenciamentoMecanica.API.Controllers
         {
             var id = await _mediator.Send(command);
 
-            return CreatedAtAction(nameof(GetById), new {id = id}, command);
+            return CreatedAtAction(nameof(GetById), new { id = id }, command);
+        }
+
+        [HttpPut("id")]
+        public async Task<IActionResult> Put(int id, [FromBody] UpdateAddressCommand command)
+        {
+            await _mediator.Send(command);
+
+            return NoContent();
         }
     }
 }

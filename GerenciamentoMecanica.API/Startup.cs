@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.API
@@ -46,7 +47,16 @@ namespace GerenciamentoMecanica.API
 
             services.AddMediatR(typeof(CreateClientCommandHandler));
 
-            services.AddControllers();
+            services.AddControllers()
+                //Esse metodo permite gravar o enum no banco de dados com seu nome, e não seu número.
+                .AddJsonOptions(options => options.JsonSerializerOptions.Converters
+                    .Add(new JsonStringEnumConverter())
+                )
+                .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling =
+                    Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "GerenciamentoMecanica.API", Version = "v1" });

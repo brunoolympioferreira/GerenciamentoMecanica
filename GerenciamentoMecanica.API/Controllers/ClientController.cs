@@ -1,4 +1,5 @@
 ﻿using GerenciamentoMecanica.Application.Commands.ClientCommands.CreateClient;
+using GerenciamentoMecanica.Application.Commands.ClientCommands.UpdateClient;
 using GerenciamentoMecanica.Application.Queries.ClientQueries.GetAllClients;
 using GerenciamentoMecanica.Application.Queries.ClientQueries.GetClientsById;
 using MediatR;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GerenciamentoMecanica.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/client")]
     //[ApiController]
     public class ClientController : ControllerBase
     {
@@ -50,6 +51,14 @@ namespace GerenciamentoMecanica.API.Controllers
             var id = await _mediator.Send(command);
 
             return CreatedAtAction(nameof(GetById), new { id = id }, command);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Put([FromBody] UpdateClientCommand command)
+        {
+            await _mediator.Send(command);
+
+            return NoContent();
         }
     }
 }

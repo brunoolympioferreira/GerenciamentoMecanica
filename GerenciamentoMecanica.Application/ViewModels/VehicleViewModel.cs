@@ -22,6 +22,5 @@ namespace GerenciamentoMecanica.Application.ViewModels
         public ManufacturerEnum Manufacturer { get; private set; }
         public string Brand { get; private set; }
         public int ClientId { get; private set; }
-        public virtual Client Client { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GerenciamentoMecanica.Application.ViewModels;
+using GerenciamentoMecanica.Core.DTOs;
 using GerenciamentoMecanica.Core.Repositories;
 using MediatR;
 using System;
@@ -25,10 +26,10 @@ namespace GerenciamentoMecanica.Application.Queries.ClientQueries.GetClientsById
             if (client == null) return null;
 
             var clientViewModel = new ClientDetailsViewModel(
-                client.Id,client.FullName,client.Email,client.Cpf,
-                client.Address.Street,client.Address.Number,client.Address.ZipCode,client.Address.District,
-                client.Vehicles
-                );
+                client.Id, client.FullName, client.Email, client.Cpf,
+                client.Address.Street, client.Address.Number, client.Address.Complement, client.Address.ZipCode, client.Address.District,
+                client.Address.City, client.Address.State,
+                client.Vehicles.Select(v => new ClientVehiclesDTO(v.Manufacturer, v.Brand, v.YearOfManufacture, v.LicensePlate)).ToList());
 
             return clientViewModel;
         }
